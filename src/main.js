@@ -8,6 +8,7 @@ import 'vant/lib/index.css'
 // amfe-flexible
 import 'amfe-flexible'
 
+import '@/style/index.scss'
 Vue.config.productionTip = false
 Vue.use(Vant)
 new Vue({
