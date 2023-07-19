@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-    <div class="box">HomeView</div>
+    <div class="box">HomeView123</div>
 </template>
 
 <script>
