@@ -1,14 +1,11 @@
 <!--  -->
 <template>
-  <div class="box">
-    HomeView
-    <i class="iconfont icon-xiaoxi-zhihui"></i>
-  </div>
+  <div>videoView</div>
 </template>
 
 <script>
 export default {
-  name: 'HomeView',
+  name: 'videoView',
   data() {
     return {}
   },
