@@ -1,4 +1,20 @@
 // 全局样式
+
+@import 'https://at.alicdn.com/t/c/font_4175115_n7xb9z0lcbi.css?spm=a313x.7781069.1998910419.83&file=font_4175115_n7xb9z0lcbi.css';
 body {
-    background-color: red;
+  background-color: #f5f7f9;
+}
+
+// header
+
+.header {
+  .van-nav-bar__content {
+    background-color: #3296fa;
+    .van-icon {
+      color: #fff;
+    }
+    .van-nav-bar__title {
+      color: #fff;
+    }
+  }
 }
