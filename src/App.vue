@@ -10,6 +10,12 @@
   </div>
 </template>
 <script>
+const _routerMap = {
+  home: 0,
+  question: 1,
+  video: 2,
+  my: 3
+}
 export default {
   name: 'AppView',
   data() {
@@ -21,6 +27,9 @@ export default {
   watch: {
     $route(to, from) {
       // this.active = to.meta.active
+      if (_routerMap[to.name]) {
+        this.active = _routerMap[to.name]
+      }
       if (to.name === 'login') {
         return (this.flag = true)
       }
