@@ -57,7 +57,6 @@
 
 <script>
 import { loginRequest } from '@/api/user'
-import { USER_KEY } from '@/config/user'
 import { Toast } from 'vant'
 export default {
   name: 'LoginView',
@@ -66,7 +65,7 @@ export default {
       isClicked: false,
       time: 10 * 1000,
       userInfo: {
-        mobile: '',
+        mobile: '13229157502',
         code: '246810'
       },
       fieldsRules: {
@@ -122,14 +121,17 @@ export default {
           message: '登录中...',
           duration: 0
         })
+        console.log(this.userInfo)
         const { data } = await loginRequest(this.userInfo)
-        // console.log(data)
-        this.$store.commit(USER_KEY, data)
+        console.log(data)
+        this.$store.commit('setUser', data)
         Toast.success('登录成功')
+        this.$router.push({
+          name: 'my'
+        })
       } catch (error) {
-        // toast.clear()
-        Toast.fail(error.message)
         console.log(error)
+        // Toast.fail(error?.response?.data?.message)
       }
     },
     onFailed(errorInfo) {
