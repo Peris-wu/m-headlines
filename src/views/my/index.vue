@@ -78,7 +78,14 @@ export default {
   name: 'myView',
   data() {
     return {
-      curUserInfo: null
+      curUserInfo: {
+        name: '',
+        photo: '',
+        art_count: 0,
+        follow_count: 0,
+        fans_count: 0,
+        like_count: 0
+      }
     }
   },
   computed: {
