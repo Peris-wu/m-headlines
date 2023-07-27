@@ -23,3 +23,21 @@ export const getUserInfo = () => {
     url: '/v1_0/user'
   })
 }
+
+// get user channels
+
+export const getUserChannels = () => {
+  return axios({
+    method: 'GET',
+    url: '/v1_0/user/channels'
+  })
+}
+
+// get user channels for id of channel
+export const getUserChannelById = (params) => {
+  return axios({
+    method: 'GET',
+    url: '/v1_0/articles',
+    params
+  })
+}
