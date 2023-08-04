@@ -58,3 +58,11 @@ export const deleteUserChannelById = (channelId) => {
     url: `/v1_0/user/channels/${channelId}`
   })
 }
+
+// get user search results
+export const getUserSearchHistory = () => {
+  return axios({
+    method: 'GET',
+    url: '/v1_0/user/histories'
+  })
+}
