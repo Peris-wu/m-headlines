@@ -4,13 +4,12 @@ import router from './router'
 import store from './store'
 import Vant from 'vant'
 import 'vant/lib/index.css'
-
+import '@/utils/day'
 import _ from 'lodash'
-
 // amfe-flexible
 import 'amfe-flexible'
-
 import '@/style/index.scss'
+
 Vue.config.productionTip = false
 Vue.prototype.$_ = _
 Vue.use(Vant)
