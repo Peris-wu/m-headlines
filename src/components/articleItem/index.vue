@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class="article-item">
-    <van-cell>
+    <van-cell @click="toPageDetail">
       <div slot="title" class="f16 title van-multi-ellipsis--l2">
         {{ article.title }}
       </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import dayjs from '@/utils/day'
+// import dayjs from '@/utils/day'
 export default {
   name: 'ArticleItem',
   props: {
@@ -40,9 +40,14 @@ export default {
   data() {
     return {}
   },
-  filters: {
-    timeFilter(value) {
-      return dayjs().to(dayjs(value))
+  methods: {
+    toPageDetail() {
+      this.$router.push({
+        name: 'article',
+        params: {
+          articleId: this.article.art_id
+        }
+      })
     }
   },
   components: {}

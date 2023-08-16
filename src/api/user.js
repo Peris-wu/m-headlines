@@ -58,3 +58,69 @@ export const deleteUserChannelById = (channelId) => {
     url: `/v1_0/user/channels/${channelId}`
   })
 }
+
+// get user search results
+export const getUserSearchHistory = () => {
+  return axios({
+    method: 'GET',
+    url: '/v1_0/user/histories'
+  })
+}
+
+// flowUserById
+export const flowUserById = (autId) => {
+  return axios({
+    method: 'POST',
+    url: '/v1_0/user/followings',
+    data: {
+      target: autId
+    }
+  })
+}
+
+// flowUserById
+export const cancelFlowUserById = (autId) => {
+  return axios({
+    method: 'DELETE',
+    url: `/v1_0/user/followings/${autId}`
+  })
+}
+
+// collect article by articleId
+
+export const collectArticleById = (autId) => {
+  return axios({
+    method: 'POST',
+    url: '/v1_0/article/collections',
+    data: {
+      target: autId
+    }
+  })
+}
+
+// cancel collect article by articleId
+export const cancelCollectArticleById = (autId) => {
+  return axios({
+    method: 'DELETE',
+    url: `/v1_0/article/collections/${autId}`
+  })
+}
+
+// upvote article by articleId
+export const upvoteArticleById = (autId) => {
+  return axios({
+    method: 'POST',
+    url: '/v1_0/article/likings',
+    data: {
+      target: autId
+    }
+  })
+}
+
+// cancel upvote article by articleId
+export const cancelUpvoteArticleById = (autId) => {
+  return axios({
+    method: 'DELETE',
+    url: `/v1_0/article/likings/${autId}`
+  })
+}

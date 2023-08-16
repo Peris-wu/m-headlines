@@ -10,6 +10,7 @@
             block
             round
             icon="search"
+            @click="toSearchPage"
           >
             <span class="test">搜索</span>
           </van-button>
@@ -85,7 +86,7 @@ export default {
       finished: false,
       refreshing: false,
       defaultChannel: 0,
-      popPup: true,
+      popPup: false,
       tabsActive: 0
     }
   },
@@ -122,6 +123,11 @@ export default {
       if (!index) return
       this.tabsActive = Number(index)
       this.popPup = false
+    },
+    toSearchPage() {
+      this.$router.push({
+        name: 'search'
+      })
     },
     async addChannel(id) {
       const index = this.allChannels.findIndex(
