@@ -48,6 +48,11 @@ const routes = [
     props: true
   },
   {
+    path: '/user-profile',
+    name: 'userProfile',
+    component: () => import('@/views/userProfile')
+  },
+  {
     path: '*',
     redirect: '/'
   }

@@ -14,7 +14,9 @@
               </div>
             </template>
             <template slot="right-icon">
-              <van-button size="mini" round>编辑资料</van-button>
+              <van-button size="mini" round to="/user-profile"
+                >编辑资料</van-button
+              >
             </template>
           </van-cell>
         </van-cell-group>
