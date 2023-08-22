@@ -12,6 +12,9 @@ import '@/style/index.scss'
 
 Vue.config.productionTip = false
 Vue.prototype.$_ = _
+Vue.filter('sex', (val) => {
+  return val === 0 ? '男' : '女'
+})
 Vue.use(Vant)
 new Vue({
   router,

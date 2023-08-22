@@ -124,3 +124,31 @@ export const cancelUpvoteArticleById = (autId) => {
     url: `/v1_0/article/likings/${autId}`
   })
 }
+
+// get user profile
+export const getUserProfile = () => {
+  return axios({
+    url: '/v1_0/user/profile',
+    method: 'GET'
+  })
+}
+
+// modify user profile
+
+export const modifyUserProfile = (data) => {
+  return axios({
+    url: '/v1_0/user/profile',
+    method: 'PATCH',
+    data
+  })
+}
+
+// upload user profile of avatar
+
+export const uploadUserProfileAvatar = (data) => {
+  return axios({
+    url: '/v1_0/user/photo',
+    method: 'PATCH',
+    data
+  })
+}
