@@ -64,7 +64,7 @@
     </div>
     <div class="robot-notify">
       <van-cell title="消息通知" is-link :to="{ name: 'home' }" />
-      <van-cell title="机器人" is-link :to="{ name: 'video' }" />
+      <van-cell title="机器人" is-link :to="{ name: 'chatRobot' }" />
     </div>
     <div class="logOut" v-if="user">
       <van-cell title="退出登录" @click="logOut" />

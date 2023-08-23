@@ -53,6 +53,11 @@ const routes = [
     component: () => import('@/views/userProfile')
   },
   {
+    path: '/chat-robot',
+    name: 'chatRobot',
+    component: () => import('@/views/chatRobot')
+  },
+  {
     path: '*',
     redirect: '/'
   }
