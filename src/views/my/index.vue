@@ -117,17 +117,20 @@ export default {
       try {
         const { data } = await getUserInfo()
         this.$store.commit('setUserInfo', data)
+        this.curUserInfo = data.data
+        console.log(data)
       } catch (err) {
         console.log(err)
       }
     }
   },
   mounted() {
-    if (this.user !== null) {
-      this.getUserInfo()
-    }
+    console.log(this.userInfo)
     if (this.userInfo !== null) {
       this.curUserInfo = this.userInfo.data
+    }
+    if (this.user !== null) {
+      this.getUserInfo()
     }
   },
   components: {}

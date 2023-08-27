@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: getItem(USER_KEY) || null,
-    userInfo: getItem(USER_INFO_KEY) || null
+    userInfo: getItem(USER_INFO_KEY) || null,
+    cachePage: ['LayoutView']
   },
   getters: {},
   mutations: {
@@ -18,6 +19,23 @@ export default new Vuex.Store({
     setUserInfo(state, userInfo) {
       state.userInfo = userInfo
       setItem(USER_INFO_KEY, userInfo)
+    },
+    addCachePage(state, cacheList) {
+      cacheList.forEach((needCacheName) => {
+        if (!state.cachePage.includes(needCacheName)) {
+          state.cachePage.push(needCacheName)
+        }
+      })
+    },
+    removeCachePage(state, removeCacheList) {
+      removeCacheList.forEach((removeCacheName) => {
+        const index = state.cachePage.findIndex(
+          (name) => name === removeCacheName
+        )
+        if (index !== -1) {
+          state.cachePage.splice(index, 1)
+        }
+      })
     }
   },
   actions: {},
