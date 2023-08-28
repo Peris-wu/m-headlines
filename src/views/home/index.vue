@@ -182,6 +182,15 @@ export default {
         this.initUserChannels()
       }
     }
+
+    // 开启keep-alive缓存
+    // this.$store.commit('addCachePage', ['LayoutView'])
+    this.$store.commit('addCachePage', [
+      'LayoutView',
+      'questionAnswerView',
+      'videoView',
+      'myView'
+    ])
   }
 }
 </script>

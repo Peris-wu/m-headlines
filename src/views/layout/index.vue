@@ -1,7 +1,9 @@
 <!--  -->
 <template>
   <div class="layout">
-    <router-view></router-view>
+    <keep-alive :include="cachePage">
+      <router-view></router-view>
+    </keep-alive>
     <van-tabbar v-model="active" @change="change">
       <van-tabbar-item icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item icon="comment-o">问答</van-tabbar-item>
@@ -12,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 const _routerMap = {
   home: 0,
   question: 1,
@@ -46,7 +49,13 @@ export default {
       this.$router.push({ name: routerMap[value] })
     }
   },
-  components: {}
+  computed: {
+    ...mapState(['cachePage'])
+  },
+  components: {},
+  mounted() {
+    console.log(this.cachePage)
+  }
 }
 </script>
 <style lang="scss" scoped></style>

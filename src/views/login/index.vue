@@ -125,9 +125,11 @@ export default {
         const { data } = await loginRequest(this.userInfo)
         console.log(data)
         this.$store.commit('setUser', data)
+        this.$store.commit('removeCachePage', ['LayoutView'])
         Toast.success('登录成功')
+
         this.$router.push({
-          name: 'my'
+          name: 'home'
         })
       } catch (error) {
         console.log(error)

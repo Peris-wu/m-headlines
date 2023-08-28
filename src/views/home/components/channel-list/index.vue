@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div class="channel-list">
+  <div class="channel-list" ref="channelListRef">
     <van-pull-refresh
       v-model="refreshing"
       @refresh="onRefresh"
@@ -42,7 +42,8 @@ export default {
       finished: false,
       refreshing: false,
       timestamp: null,
-      successText: ''
+      successText: '',
+      currentScrollTop: 0
     }
   },
   methods: {
@@ -83,6 +84,19 @@ export default {
   },
   components: {
     articleItem
+  },
+  activated() {
+    this.$refs.channelListRef.scrollTop = this.currentScrollTop
+  },
+  deactivated() {},
+  mounted() {
+    const channelListRef = this.$refs.channelListRef
+    channelListRef.addEventListener(
+      'scroll',
+      this.$_.debounce(() => {
+        this.currentScrollTop = channelListRef.scrollTop
+      }, 500)
+    )
   }
 }
 </script>

@@ -64,7 +64,7 @@
     </div>
     <div class="robot-notify">
       <van-cell title="消息通知" is-link :to="{ name: 'home' }" />
-      <van-cell title="机器人" is-link :to="{ name: 'video' }" />
+      <van-cell title="机器人" is-link :to="{ name: 'chatRobot' }" />
     </div>
     <div class="logOut" v-if="user">
       <van-cell title="退出登录" @click="logOut" />
@@ -117,17 +117,20 @@ export default {
       try {
         const { data } = await getUserInfo()
         this.$store.commit('setUserInfo', data)
+        this.curUserInfo = data.data
+        console.log(data)
       } catch (err) {
         console.log(err)
       }
     }
   },
   mounted() {
-    if (this.user !== null) {
-      this.getUserInfo()
-    }
+    console.log(this.userInfo)
     if (this.userInfo !== null) {
       this.curUserInfo = this.userInfo.data
+    }
+    if (this.user !== null) {
+      this.getUserInfo()
     }
   },
   components: {}
