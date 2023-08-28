@@ -96,7 +96,10 @@ export default {
   methods: {
     toLogin() {
       this.$router.push({
-        name: 'login'
+        name: 'login',
+        query: {
+          redirect: this.$route.fullPath
+        }
       })
     },
     logOut() {
@@ -118,14 +121,14 @@ export default {
         const { data } = await getUserInfo()
         this.$store.commit('setUserInfo', data)
         this.curUserInfo = data.data
-        console.log(data)
+        // console.log(data)
       } catch (err) {
         console.log(err)
       }
     }
   },
   mounted() {
-    console.log(this.userInfo)
+    // console.log(this.userInfo)
     if (this.userInfo !== null) {
       this.curUserInfo = this.userInfo.data
     }

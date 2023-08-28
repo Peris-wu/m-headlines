@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     user: getItem(USER_KEY) || null,
     userInfo: getItem(USER_INFO_KEY) || null,
-    cachePage: ['LayoutView']
+    cachePage: ['LayoutView'],
+    tabBarActive: 0
   },
   getters: {},
   mutations: {
@@ -36,6 +37,9 @@ export default new Vuex.Store({
           state.cachePage.splice(index, 1)
         }
       })
+    },
+    setTabBarActive(state, currentActive) {
+      state.tabBarActive = currentActive
     }
   },
   actions: {},
