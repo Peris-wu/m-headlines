@@ -127,13 +127,9 @@ export default {
         this.$store.commit('setUser', data)
         this.$store.commit('removeCachePage', ['LayoutView'])
         Toast.success('登录成功')
-
-        this.$router.push({
-          name: 'home'
-        })
+        this.$router.replace(this.$route.query.redirect || { name: 'home' })
       } catch (error) {
         console.log(error)
-        // Toast.fail(error?.response?.data?.message)
       }
     },
     onFailed(errorInfo) {

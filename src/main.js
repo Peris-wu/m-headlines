@@ -16,6 +16,7 @@ Vue.filter('sex', (val) => {
   return val === 0 ? '男' : '女'
 })
 Vue.use(Vant)
+
 new Vue({
   router,
   store,
